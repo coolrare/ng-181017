@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardInit } from './DashboardInit';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,10 +8,18 @@ import { DashboardInit } from './DashboardInit';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
     DashboardInit();
+  }
+
+  redirect1() {
+    this.router.navigateByUrl('/charts/flot/77');
+  }
+
+  redirect2() {
+    this.router.navigate(['/', 'charts', 'flot', '88'])
   }
 }
 
