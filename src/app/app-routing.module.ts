@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'charts',
     children: [
       { path: '', redirectTo: 'flot', pathMatch: 'full' },
-      { path: 'flot', component: FlotComponent },
+      { path: 'flot/:type', component: FlotComponent },
     ]
   },
   { path: '**', component: NotFoundComponent }
