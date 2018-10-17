@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LayoutInit } from './LayoutInit';
 
 @Component({
   selector: 'app-layout',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    LayoutInit();
   }
-
 }
