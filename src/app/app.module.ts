@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsComponent } from './forms/forms.component';
+import { FlotComponent } from './charts/flot/flot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
     DashboardComponent,
-    FormsComponent
+    FormsComponent,
+    FlotComponent
   ],
   imports: [
     BrowserModule,
