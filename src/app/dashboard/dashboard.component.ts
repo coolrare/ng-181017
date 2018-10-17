@@ -15,11 +15,15 @@ export class DashboardComponent implements OnInit {
   }
 
   redirect1() {
-    this.router.navigateByUrl('/charts/flot/77');
+    this.router.navigateByUrl('/charts/flot/77?q=' + 'John');
   }
 
   redirect2() {
-    this.router.navigate(['/', 'charts', 'flot', '88'])
+    this.router.navigate(['/', 'charts', 'flot', '88'],{
+      queryParams: {
+        q: 'Tom'
+      }
+    })
   }
 }
 

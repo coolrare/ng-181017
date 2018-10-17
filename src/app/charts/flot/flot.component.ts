@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class FlotComponent implements OnInit {
 
   type: string = 'N/A';
+  q: string = '';
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
@@ -23,6 +24,14 @@ export class FlotComponent implements OnInit {
 
     // Method 2
     // this.type = this.route.snapshot.params['type']
+
+    // Method 3
+    this.route.queryParams.subscribe(param => {
+      this.q = param['q'];
+    })
+
+    // Method 4
+    // this.q = this.route.snapshot.queryParams['q']
 
   }
 }
