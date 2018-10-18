@@ -15,7 +15,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-lg-6">
-              <form role="form" #form="ngForm">
+              <form role="form" (ngSubmit)="onSubmit(form)" #form="ngForm">
                 <div class="form-group" [class.has-error]="form.submitted && tName.invalid">
                   <label>Name</label>
                   <input class="form-control" #tName="ngModel"
