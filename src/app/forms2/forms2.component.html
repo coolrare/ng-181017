@@ -16,6 +16,7 @@
           <div class="row">
             <div class="col-lg-6">
               <form role="form" [formGroup]="form">
+                <pre>{{data|json}}</pre>
                   <pre>form.value = {{ form.value|json }}
 form.errors = {{ form.errors|json }}
 form.valid = {{ form.valid }}
@@ -147,7 +148,7 @@ form.get('name').disabled = {{ form.get('name').disabled }}</pre>
                   </select>
                 </div>
                 <button type="submit" class="btn btn-default">Submit Button</button>
-                <button type="reset" class="btn btn-default">Reset Button</button>
+                <button type="reset" type="button" (click)="resetForm()" class="btn btn-default">Reset Button</button>
               </form>
             </div>
             <!-- /.col-lg-6 (nested) -->

@@ -8,13 +8,14 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 })
 export class Forms2Component implements OnInit {
 
+  data: any;
   form: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.form = this.fb.group({
-      name: ['Will', [
+      name: ['', [
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(10)
@@ -22,11 +23,25 @@ export class Forms2Component implements OnInit {
       ],
 
       tels: this.fb.array([
-        this.fb.control('0944-444444'),
-        this.fb.control('0944-777777')
+        this.fb.control(['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]]),
+        this.fb.control(['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]])
       ])
 
     });
+
+    this.data = {
+      name: 'Will',
+      tels: [
+        "0944444444",
+        "0988888888"
+      ]
+    };
+
+    this.form.reset(this.data);
+  }
+
+  resetForm() {
+    this.form.reset(this.data);
   }
 
   addTelField() {
