@@ -23,8 +23,8 @@ export class Forms2Component implements OnInit {
       ],
 
       tels: this.fb.array([
-        this.fb.control(['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]]),
-        this.fb.control(['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]])
+        this.fb.control('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
+        this.fb.control('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)])
       ])
 
     });

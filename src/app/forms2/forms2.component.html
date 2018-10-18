@@ -47,7 +47,9 @@ form.get('name').disabled = {{ form.get('name').disabled }}</pre>
                 <h3>Contacts Group</h3>
 
                 <div formArrayName="tels">
-                    <div class="form-group" *ngFor="let item of form.get('tels')['controls']; let i = index">
+                    <div class="form-group"
+                      [class.has-error]="item.invalid"
+                      *ngFor="let item of form.get('tels')['controls']; let i = index">
                       <label>Tel {{i+1}}</label>
                       <input class="form-control" [formControlName]="i" placeholder="請輸入電話 {{i+1}}">
                     </div>
@@ -148,7 +150,7 @@ form.get('name').disabled = {{ form.get('name').disabled }}</pre>
                   </select>
                 </div>
                 <button type="submit" class="btn btn-default">Submit Button</button>
-                <button type="reset" type="button" (click)="resetForm()" class="btn btn-default">Reset Button</button>
+                <button type="button" (click)="resetForm()" class="btn btn-default">Reset Button</button>
               </form>
             </div>
             <!-- /.col-lg-6 (nested) -->
