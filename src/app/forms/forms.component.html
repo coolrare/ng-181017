@@ -16,6 +16,17 @@
           <div class="row">
             <div class="col-lg-6">
               <form role="form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+                  <pre>data = {{data|json}}</pre>
+                  <pre>form.value = {{ form.value|json }}
+form.errors = {{ form.errors|json }}
+form.valid = {{ form.valid }}
+form.invalid = {{ form.invalid }}
+form.pristine = {{ form.pristine }}
+form.dirty = {{ form.dirty }}
+form.touched = {{ form.touched }}
+form.untouched = {{ form.untouched }}
+form.enabled = {{ form.enabled }}
+form.disabled = {{ form.disabled }}</pre>
                 <div class="form-group" [class.has-error]="form.submitted && tName.invalid">
                   <label>Name</label>
                   <input class="form-control" #tName="ngModel"
@@ -34,10 +45,34 @@ tName.untouched = {{ tName.untouched }}
 tName.enabled = {{ tName.enabled }}
 tName.disabled = {{ tName.disabled }}</pre>
                 </div>
-                <div class="form-group">
+
+                <h3>Contacts Group</h3>
+
+                <div class="form-group" ngModelGroup="contacts" #tContacts="ngModelGroup">
                   <label>Tel</label>
-                  <input class="form-control"
+                  <input class="form-control" #tTel="ngModel"
                     name="tel" [(ngModel)]="data.tel" placeholder="Enter text">
+<pre>tTel.value = {{ tTel.value }}
+tTel.errors = {{ tTel.errors|json }}
+tTel.valid = {{ tTel.valid }}
+tTel.invalid = {{ tTel.invalid }}
+tTel.pristine = {{ tTel.pristine }}
+tTel.dirty = {{ tTel.dirty }}
+tTel.touched = {{ tTel.touched }}
+tTel.untouched = {{ tTel.untouched }}
+tTel.enabled = {{ tTel.enabled }}
+tTel.disabled = {{ tTel.disabled }}</pre>
+
+                  <pre>tContacts.value = {{ tContacts.value|json }}
+tContacts.errors = {{ tContacts.errors|json }}
+tContacts.valid = {{ tContacts.valid }}
+tContacts.invalid = {{ tContacts.invalid }}
+tContacts.pristine = {{ tContacts.pristine }}
+tContacts.dirty = {{ tContacts.dirty }}
+tContacts.touched = {{ tContacts.touched }}
+tContacts.untouched = {{ tContacts.untouched }}
+tContacts.enabled = {{ tContacts.enabled }}
+tContacts.disabled = {{ tContacts.disabled }}</pre>
                 </div>
                 <div class="form-group">
                   <label>Static Control</label>
