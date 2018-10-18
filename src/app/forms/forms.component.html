@@ -15,15 +15,26 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-lg-6">
-              <form role="form">
-                <div class="form-group">
-                  <label>Text Input</label>
-                  <input class="form-control">
-                  <p class="help-block">Example block-level help text here.</p>
+              <form role="form" #form="ngForm">
+                <div class="form-group" [class.has-error]="tName.invalid">
+                  <label>Name</label>
+                  <input class="form-control" #tName="ngModel"
+                    name="name" [(ngModel)]="data.name" required>
+                  <p class="help-block" *ngIf="tName.invalid">請輸入 name 欄位</p>
+                  <pre>tName.value = {{ tName.value }}
+tName.valid = {{ tName.valid }}
+tName.invalid = {{ tName.invalid }}
+tName.pristine = {{ tName.pristine }}
+tName.dirty = {{ tName.dirty }}
+tName.touched = {{ tName.touched }}
+tName.untouched = {{ tName.untouched }}
+tName.enabled = {{ tName.enabled }}
+tName.disabled = {{ tName.disabled }}</pre>
                 </div>
                 <div class="form-group">
-                  <label>Text Input with Placeholder</label>
-                  <input class="form-control" placeholder="Enter text">
+                  <label>Tel</label>
+                  <input class="form-control"
+                    name="tel" [(ngModel)]="data.tel" placeholder="Enter text">
                 </div>
                 <div class="form-group">
                   <label>Static Control</label>
@@ -121,6 +132,7 @@
                 <button type="reset" class="btn btn-default">Reset Button</button>
               </form>
             </div>
+            <hr>
             <!-- /.col-lg-6 (nested) -->
             <div class="col-lg-6">
               <h1>Disabled Form States</h1>
