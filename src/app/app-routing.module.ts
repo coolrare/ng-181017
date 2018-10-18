@@ -7,6 +7,7 @@ import { FlotComponent } from './charts/flot/flot.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AuthGuard } from './auth.guard';
+import { Forms2Component } from './forms2/forms2.component';
 
 const routes: Routes = [
   { path: '', component: LayoutComponent,
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'forms', component: FormsComponent },
+      { path: 'forms2', component: Forms2Component },
       { path: 'charts', canActivate: [AuthGuard],
         loadChildren: './charts/charts.module#ChartsModule'
       },
