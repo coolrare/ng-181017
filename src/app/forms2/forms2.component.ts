@@ -20,7 +20,10 @@ export class Forms2Component implements OnInit {
         Validators.maxLength(10)
         ]
       ],
-      tel: '0944-444444'
+
+      contacts: this.fb.group({
+        tel: '0944-444444'
+      })
     })
   }
 

@@ -42,10 +42,35 @@ form.get('name').untouched = {{ form.get('name').untouched }}
 form.get('name').enabled = {{ form.get('name').enabled }}
 form.get('name').disabled = {{ form.get('name').disabled }}</pre>
                 </div>
-                <div class="form-group">
+
+                <h3>Contacts Group</h3>
+
+                <div class="form-group" formGroupName="contacts">
                   <label>Tel</label>
-                  <input class="form-control" formControlName="tel" placeholder="Enter text">
+                  <input class="form-control" formControlName="tel" placeholder="請輸入電話">
+<pre>form.get('contacts.tel').value = {{ form.get('contacts.tel').value }}
+form.get('contacts.tel').errors = {{ form.get('contacts.tel').errors|json }}
+form.get('contacts.tel').valid = {{ form.get('contacts.tel').valid }}
+form.get('contacts.tel').invalid = {{ form.get('contacts.tel').invalid }}
+form.get('contacts.tel').pristine = {{ form.get('contacts.tel').pristine }}
+form.get('contacts.tel').dirty = {{ form.get('contacts.tel').dirty }}
+form.get('contacts.tel').touched = {{ form.get('contacts.tel').touched }}
+form.get('contacts.tel').untouched = {{ form.get('contacts.tel').untouched }}
+form.get('contacts.tel').enabled = {{ form.get('contacts.tel').enabled }}
+form.get('contacts.tel').disabled = {{ form.get('contacts.tel').disabled }}</pre>
+
+                  <pre>form.get('contacts').value = {{ form.get('contacts').value|json }}
+form.get('contacts').errors = {{ form.get('contacts').errors|json }}
+form.get('contacts').valid = {{ form.get('contacts').valid }}
+form.get('contacts').invalid = {{ form.get('contacts').invalid }}
+form.get('contacts').pristine = {{ form.get('contacts').pristine }}
+form.get('contacts').dirty = {{ form.get('contacts').dirty }}
+form.get('contacts').touched = {{ form.get('contacts').touched }}
+form.get('contacts').untouched = {{ form.get('contacts').untouched }}
+form.get('contacts').enabled = {{ form.get('contacts').enabled }}
+form.get('contacts').disabled = {{ form.get('contacts').disabled }}</pre>
                 </div>
+
                 <div class="form-group">
                   <label>Static Control</label>
                   <p class="form-control-static">email@example.com</p>
