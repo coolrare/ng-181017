@@ -16,10 +16,31 @@
           <div class="row">
             <div class="col-lg-6">
               <form role="form" [formGroup]="form">
-                <div class="form-group">
+                  <pre>form.value = {{ form.value|json }}
+form.errors = {{ form.errors|json }}
+form.valid = {{ form.valid }}
+form.invalid = {{ form.invalid }}
+form.pristine = {{ form.pristine }}
+form.dirty = {{ form.dirty }}
+form.touched = {{ form.touched }}
+form.untouched = {{ form.untouched }}
+form.enabled = {{ form.enabled }}
+form.disabled = {{ form.disabled }}</pre>
+                <div class="form-group" [class.has-error]="form.get('name').invalid">
                   <label>Name</label>
                   <input class="form-control" formControlName="name">
-                  <p class="help-block">Example block-level help text here.</p>
+                  <p class="help-block" *ngIf="form.get('name')['errors']?.required">請輸入 name 欄位</p>
+                  <p class="help-block" *ngIf="form.get('name')['errors']?.minlength">請輸入至少 {{form.get('name')['errors']?.minlength.requiredLength}} 字元</p>
+                  <pre>form.get('name').value = {{ form.get('name').value }}
+form.get('name').errors = {{ form.get('name').errors|json }}
+form.get('name').valid = {{ form.get('name').valid }}
+form.get('name').invalid = {{ form.get('name').invalid }}
+form.get('name').pristine = {{ form.get('name').pristine }}
+form.get('name').dirty = {{ form.get('name').dirty }}
+form.get('name').touched = {{ form.get('name').touched }}
+form.get('name').untouched = {{ form.get('name').untouched }}
+form.get('name').enabled = {{ form.get('name').enabled }}
+form.get('name').disabled = {{ form.get('name').disabled }}</pre>
                 </div>
                 <div class="form-group">
                   <label>Tel</label>
