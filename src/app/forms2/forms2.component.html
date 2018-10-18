@@ -52,6 +52,9 @@ form.get('name').disabled = {{ form.get('name').disabled }}</pre>
                       *ngFor="let item of form.get('tels')['controls']; let i = index">
                       <label>Tel {{i+1}}</label>
                       <input class="form-control" [formControlName]="i" placeholder="請輸入電話 {{i+1}}">
+                      <div class="help-block" *ngIf="item.invalid">
+                        <pre>{{item.errors|json}}</pre>
+                      </div>
                     </div>
                 </div>
 

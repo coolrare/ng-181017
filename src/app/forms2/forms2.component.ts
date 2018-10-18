@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { PhoneNumberValidator } from '../shared/PhoneNumberValidator';
 
 @Component({
   selector: 'app-forms2',
@@ -23,8 +24,8 @@ export class Forms2Component implements OnInit {
       ],
 
       tels: this.fb.array([
-        this.fb.control('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
-        this.fb.control('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)])
+        this.fb.control('', [PhoneNumberValidator, Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
+        this.fb.control('', [PhoneNumberValidator, Validators.required, Validators.minLength(10), Validators.maxLength(10)])
       ])
 
     });
