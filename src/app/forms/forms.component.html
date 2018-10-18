@@ -19,9 +19,12 @@
                 <div class="form-group" [class.has-error]="tName.invalid">
                   <label>Name</label>
                   <input class="form-control" #tName="ngModel"
-                    name="name" [(ngModel)]="data.name" required>
-                  <p class="help-block" *ngIf="tName.invalid">請輸入 name 欄位</p>
+                    name="name" [(ngModel)]="data.name"
+                    required minlength="2" maxlength="10">
+                  <p class="help-block" *ngIf="tName['errors']?.required">請輸入 name 欄位</p>
+                  <p class="help-block" *ngIf="tName['errors']?.minlength">請輸入至少 {{tName['errors']?.minlength.requiredLength}} 字元</p>
                   <pre>tName.value = {{ tName.value }}
+tName.errors = {{ tName.errors|json }}
 tName.valid = {{ tName.valid }}
 tName.invalid = {{ tName.invalid }}
 tName.pristine = {{ tName.pristine }}
