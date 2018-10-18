@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-forms2',
@@ -21,10 +21,17 @@ export class Forms2Component implements OnInit {
         ]
       ],
 
-      contacts: this.fb.group({
-        tel: '0944-444444'
-      })
-    })
+      tels: this.fb.array([
+        this.fb.control('0944-444444'),
+        this.fb.control('0944-777777')
+      ])
+
+    });
+  }
+
+  addTelField() {
+    let arr = this.form.get('tels') as FormArray;
+    arr.push(this.fb.control(''));
   }
 
 }
